@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<title>mymeetic</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="conn_inscription.css">
 	<script type="text/javascript" src="formulaire.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -31,8 +31,11 @@
 				<input placeholder="ex: toietmoi@gmail.com" type="text" name="email" class="form-control" >
 				<span>date de naissance</span>
 				<input class="form-control col-lg-6 date_de_naissance" type="date" name="date_de_naissance">
+				<span>Veuiller crée un mot de passe</span>
+				<input class="form-control" type="password" name="mot_de_passe">
+				<span>Veuiller retaper votre mot de passe</span>
+				<input class="form-control" type="password" name="verif_mot_de_passe">
 				<input type="submit" value="Inscription" name="inscription" class="btn btn-primary btn_inscription" >
-				
 			</form>
 			<form>
 				<input type="submit" value="Connexion" name="Connexion" class="btn btn-success">
@@ -43,28 +46,3 @@
 </body>
 </html>
 
-<?php
-
-include('conn_bdd.php') ;
-
-class membre
-{
-	public $nom;
-	public $prenom;
-	public $sexe;
-	public $ville;
-	public $email;
-	public $ddn;
-	public $mdp;
-
-	public function __construct()
-	{
-		$this->$nom = $nom;
-		$this->prenom = $prenom;
-		$this->$sexe = $sexe;
-		$this->$ville = $ville;
-		$this->email = $email;
-		$this->$ddn = $ddn;
-		$this->$mdp = $mdp;
-	}
-}
