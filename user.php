@@ -10,8 +10,10 @@ class user
 		$this->conn = new PDO("mysql:host=localhost; dbname=my_meetic", 'root', '30042436') ;
 	}
 
-	public function getUser()
+	public function getUser($email, $password)
 	{
+
+
 
 	}
 
@@ -22,7 +24,25 @@ class user
 
 	public function userExist($email, $password)
 	{
-
+		var_dump($email);
+		$requet = $this->conn->prepare("SELECT COUNT(*) FROM membre WHERE email = :email AND password = :password");
+		$requet->bindParam(":email", $email, PDO::PARAM_STR);
+		$requet->bindParam(":password", $password, PDO::PARAM_STR);
+		$requet->execute();
+		$donnes = $requet->fetch();
+		$donnes_final = $donnes[0];
+		var_dump($donnes);
+		if ($donnes_final == 1) 
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+		
+		// var_dump($bla);
 	}
 	public function addUser($nom, $prenom, $date_de_naissance, $sexe, $ville, $email, $password)
 	{
@@ -32,18 +52,13 @@ class user
 			$checkUserExists->execute();
 			$result = $checkUserExists->fetch();
 			$count = $result[0];
-			
 			$naissance = $_POST['date_de_naissance'];
 			$under18 = (date('Y-m-d') - $naissance);
-			
-			if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['date_de_naissance']) && isset($_POST['sexe']) && isset($_POST['ville']) && isset($_POST['email']) && isset($_POST['password']) && $_POST['nom'] !== "" && $_POST['prenom'] !== "" && $_POST['date_de_naissance'] !== "" && $_POST['sexe'] !== "" && $_POST['ville'] !== "" && $_POST['email'] !== "" && $_POST['password'] !== "") 
-			{
 				if ($under18 >= 18) 
 				{
 					if ($count == 0) 
 					{
 
-						
 					$requet = $this->conn->prepare('INSERT INTO membre (nom, prenom, date_de_naissance, sexe, ville, email, password) VALUES (:nom, :prenom, :date_de_naissance, :sexe, :ville, :email, :password)');
 					$requet->bindParam(':nom', $prenom, PDO::PARAM_STR) ;
 					$requet->bindParam(':prenom', $nom, PDO::PARAM_STR) ;
@@ -54,7 +69,6 @@ class user
 					$requet->bindParam(':password', $password, PDO::PARAM_STR) ;
 					// var_dump($requet);
 					return $requet->execute();
-
 					}
 					else
 					{
@@ -65,10 +79,38 @@ class user
 				{
 					echo "vous devez avoir plus de 18ans pour vous inscrire" ;
 				}
-			}
-			else
-			{
-				echo "veuiller remplire touts les champ pour l'inscritpion";
-			}
 	}
 }
+
+
+
+// public function verifMail($email)
+// 	{
+// 			$checkUserExists = $this->conn->prepare("SELECT COUNT(nom) FROM membre WHERE email = :email") ;
+// 			$checkUserExists->bindParam(':email', $email, PDO::PARAM_STR);
+// 			$checkUserExists->execute();
+// 			$result = $checkUserExists->fetch();
+// 			$count = $result[0];
+// 		if ($count == 0) 
+// 		{
+			
+// 		}
+// 		else
+// 		{
+// 			echo "cette addrese email existe deja";
+// 		}
+// 	}
+
+// 	public function verifAge()
+// 	{
+// 		$naissance = $_POST['date_de_naissance'];
+// 		$under18 = (date('Y-m-d') - $naissance);
+// 		if ($under18 >= 18) 
+// 		{
+
+// 		}
+// 		else
+// 		{
+// 			echo "vous devez avoir plus de 18ans pour vous inscrire" ;
+// 		}
+// 	}

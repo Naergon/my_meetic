@@ -13,8 +13,9 @@
 </body>
 </html>
 <?php
+
  session_start();
-if($_SESSION['pseudo'] == '')
+if($_SESSION['email'] == '')
 {  header('Location: conn_inscription.php');
   exit;
 }

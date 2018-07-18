@@ -38,8 +38,8 @@
 				<input class="form-control" type="password" name="verif_mot_de_passe">
 				<input type="submit" value="Inscription" name="inscription" class="btn btn-primary btn_inscription" >
 			</form>
-			<form>
-				<input type="submit" value="Connexion" name="Connexion" class="btn btn-success">
+			<form action="connexion.html">
+				<input type="submit" class="btn btn-success" value="connexion">
 			</form>
 			
 		</div>
