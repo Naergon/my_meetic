@@ -12,8 +12,6 @@ if (isset($_POST['email']) && isset($_POST['password']))
 		session_start();
 		header('location: index.php');
 		$_SESSION['email'] = $_POST['email'];
-
-
 	}
 	else
 	{

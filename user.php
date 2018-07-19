@@ -68,7 +68,7 @@ class user
 					$requet->bindParam(':email', $email, PDO::PARAM_STR) ;
 					$requet->bindParam(':password', $password, PDO::PARAM_STR) ;
 					// var_dump($requet);
-					return $requet->execute();
+					$requet->execute();
 					}
 					else
 					{
@@ -80,6 +80,19 @@ class user
 					echo "vous devez avoir plus de 18ans pour vous inscrire" ;
 				}
 	}
+	public function getProfil($email)
+	{
+		$requet = $this->conn->prepare('SELECT * FROM membre WHERE email = :email');
+		$requet->bindParam(':email', $email, PDO::PARAM_STR);
+		$requet->execute();
+		$user_info = $requet->fetchAll(PDO::FETCH_OBJ);
+		return $user_info;
+
+	}
+	// public function changeProfil($)
+	// {
+	// 	$requet = $this->conn->prepare('UPDATE nom FROM membre WHERE nom = :nom');
+	// }
 }
 
 
