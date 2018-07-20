@@ -12,7 +12,7 @@
 
 	<div class="container-fluid">
 		<div class="row justify-content-center">
-			<form action="controller_subscribe.php" method="POST" class="col-md-2 col-sm-6 col-lg-3 formulaire">
+			<form action="controller_subscribe.php" method="POST" class="col-lg-3 formulaire">
 				<h3 class="titre_formulaire">Inscription</h3>
 				<span>Nom</span>
 				<input placeholder="ex: nicola" type="text" name="prenom" class="form-control" required="required">
@@ -24,7 +24,7 @@
 					<option value="Homme">Homme</option>
 					<option value="Femme">Femme</option>
 					<option value="nerd">Nerd</option>
-					<!-- <option value="2">Apache helicoptere</option> -->
+					<option value="apach helicopter">Apach helicoptere</option>
 				</select>
 				<span>Ville</span>
 				<input placeholder="ex: Lyon" type="text" name="ville" class="form-control" required="required">
