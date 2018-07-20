@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<meta charset="utf-8"/>
-	<title>mymeetic</title>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<!-- <script type="text/javascript" src="formulaire.js"></script> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
 <?php
 
  session_start();
@@ -26,10 +15,22 @@ else
 	
 }
 ?>
-<header>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8"/>
+	<title>mymeetic</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<!-- <script type="text/javascript" src="formulaire.js"></script> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header class="header">
 	<form action="deconnexion.php">
 		<input class="btn btn-warning"  type="submit" name="" value="Deconnexion">
 	</form>
+	<a class="recherche" href="rechercher_un_membre.php">Rechercher l'ame soeur</a>
 </header>
 <!-- <div class="container-fluid" >
 	<div class="row">

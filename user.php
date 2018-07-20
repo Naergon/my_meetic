@@ -103,10 +103,10 @@ class user
 
 	public function changeProfil($columns, $change, $id_membre)
 	{
-		var_dump('hello');
-		var_dump($columns);
-		var_dump($change);
-		var_dump($id_membre);
+		// var_dump('hello');
+		// var_dump($columns);
+		// var_dump($change);
+		// var_dump($id_membre);
 		$requet = $this->conn->prepare('UPDATE membre SET ' . $columns . ' = :change WHERE id_membre = :id_membre');
 		$requet->bindParam(':change', $change, PDO::PARAM_STR);
 		$requet->bindParam(':id_membre', $id_membre, PDO::PARAM_INT);
