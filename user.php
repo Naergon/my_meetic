@@ -10,13 +10,7 @@ class user
 		$this->conn = new PDO("mysql:host=localhost; dbname=my_meetic", 'root', '30042436') ;
 	}
 
-	public function getUser($email, $password)
-	{
-
-
-
-	}
-
+	
 	public function getUserByfilter($filter)
 	{
 
@@ -69,7 +63,8 @@ class user
 					if ($count == 0) 
 					{
 
-					$requet = $this->conn->prepare('INSERT INTO membre (nom, prenom, date_de_naissance, sexe, ville, email, password) VALUES (:nom, :prenom, :date_de_naissance, :sexe, :ville, :email, :password)');
+					$requet = $this->conn->prepare('INSERT INTO membre (nom, prenom, date_de_naissance, sexe, ville, email, password)
+					 VALUES (:nom, :prenom, :date_de_naissance, :sexe, :ville, :email, :password)');
 					$requet->bindParam(':nom', $prenom, PDO::PARAM_STR) ;
 					$requet->bindParam(':prenom', $nom, PDO::PARAM_STR) ;
 					$requet->bindParam(':date_de_naissance', $date_de_naissance, PDO::PARAM_STR) ;

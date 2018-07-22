@@ -17,7 +17,7 @@ if ($_SESSION['email'] !== "")
 		var_dump($verif_password[0]->password);
 		// var_dump($mdp_hash);
 		var_dump(password_verify($_POST['last_password'], $verif_password[0]->password));
-		if(password_verify($_POST['last_password'], $verif_password[0]->password) == true)
+		if (password_verify($_POST['last_password'], $verif_password[0]->password) == true)
 		{
 			$requet = new user;
 			$requet->changeProfil($_POST['columns'], password_hash($_POST['change'], PASSWORD_DEFAULT), $_POST['id_membre']);

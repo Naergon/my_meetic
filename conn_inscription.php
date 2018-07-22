@@ -5,7 +5,7 @@
 	<title>mymeetic</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="conn_inscription.css">
-	<script type="text/javascript" src="formulaire.js"></script>
+	<!-- <script type="text/javascript" src="formulaire.js"></script> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -19,7 +19,7 @@
 				<span>Prenom</span>
 				<input placeholder="ex: pelisson" type="text" name="nom" class="form-control" required="required">
 				<span>Sex</span>
-				<select name="sexe" class="form-control" required="required">
+				<select name="sexe"  class="form-control" >
 					<option value="0">Sex</option>
 					<option value="Homme">Homme</option>
 					<option value="Femme">Femme</option>

@@ -1,7 +1,6 @@
 <?php
 require_once('user.php');
 
-	 
 
 if (isset($_POST['email']) && isset($_POST['password'])) 
 {
@@ -10,7 +9,7 @@ if (isset($_POST['email']) && isset($_POST['password']))
 	$verif_password = $verif_password->verifPassword($_POST['email']);
 	// var_dump($verif_password);
 	// var_dump($verif_password[0]->password);
-	if(password_verify($_POST['password'], $verif_password[0]->password))
+	if (password_verify($_POST['password'], $verif_password[0]->password))
 	{
 		echo "ces good";
 		$profil = new user;

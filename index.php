@@ -1,7 +1,7 @@
 <?php
 
  session_start();
-if($_SESSION['email'] == '')
+if ($_SESSION['email'] == '')
 {  
 	header('Location: conn_inscription.php');
 	exit;
@@ -28,7 +28,7 @@ else
 <body>
 <header class="header">
 	<form action="deconnexion.php">
-		<input class="btn btn-warning"  type="submit" name="" value="Deconnexion">
+		<input class="btn btn-warning"  type="submit" name="deco" value="Deconnexion">
 	</form>
 	<a class="recherche" href="rechercher_un_membre.php">Rechercher l'ame soeur</a>
 </header>
