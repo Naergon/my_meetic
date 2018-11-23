@@ -11,7 +11,6 @@ if (isset($_POST['email']) && isset($_POST['password']))
 	// var_dump($verif_password[0]->password);
 	if (password_verify($_POST['password'], $verif_password[0]->password))
 	{
-		echo "ces good";
 		$profil = new user;
 		$user_info = $profil->getProfil($_POST['email']);
 		// var_dump($user_info);

@@ -34,13 +34,13 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['date_de_nai
 
 
  
-//  session_start();
-// if(isset($_SESSION['email']))
-// {  
-// 	header('Location: index.php');
-// }
-// else
-// {
-// 	header('location: conn_inscription.php');
-// }
+ session_start();
+if(isset($_SESSION['email']))
+{  
+	header('Location: index.php');
+}
+else
+{
+	header('location: conn_inscription.php');
+}
 
